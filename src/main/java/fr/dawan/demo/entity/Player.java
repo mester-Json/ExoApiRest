@@ -10,16 +10,17 @@ public class Player {
 
     private String name;
 
-    @OneToOne
-    @JoinColumn(name  = "manager_id", unique = true)
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "manager_id", unique = true)
     private Manager manager;
 
-	public Long getId() {
-		return id;
-	}
 
-	public void setId(Long id) {
-		this.id = id;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+		return id;
 	}
 
 	public String getName() {
@@ -27,15 +28,14 @@ public class Player {
 	}
 
 	public void setName(String name) {
-		this.name = name;
-	}
+        this.name = name;
+    }
 
-	public Manager getManager() {
-		return manager;
-	}
+    public Manager getManager() {
+        return manager;
+    }
 
-	public void setManager(Manager manager) {
-		this.manager = manager;
-	}
-
+    public void setManager(Manager manager) { 
+        this.manager = manager;
+    }
 }

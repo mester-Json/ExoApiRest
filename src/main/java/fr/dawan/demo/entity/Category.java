@@ -7,8 +7,7 @@ import jakarta.persistence.*;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private 
- Long id;
+    private Long id;
 
     @Version
     private Integer version; 
